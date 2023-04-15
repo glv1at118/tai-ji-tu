@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="./favicon.png" />
+    <title>太极生万物</title>
+</head>
+
+<body>
+    <h1>太极图的不同转速对应了宇宙万物的运行规律：<span id="description"></span></h1>
+    <div>
+        <img src="./yin_yang_fish_250px.svg" alt="image-not-available" draggable="false" id="animation">
+    </div>
+    <table>
+        <tr>
+            <td id="td1">太极生两仪</td>
+            <td id="td2">四象生八卦</td>
+            <td id="td3">六道轮回</td>
+        </tr>
+        <tr>
+            <td id="td4">两仪生四象</td>
+            <td id="td5">三生万物</td>
+            <td id="td6">三善道三恶道</td>
+        </tr>
+        <tr>
+            <td id="td7">五行相生相克</td>
+            <td id="td8">物极必反</td>
+            <td id="td9">否极泰来</td>
+        </tr>
+    </table>
+    <style>
+        * {
+            user-select: none;
+            cursor: pointer;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        body h1 {
+            text-align: center;
+            padding: 35px;
+        }
+
+        body div {
+            padding: 50px;
+            width: 250px;
+            height: 250px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        body div img {
+            animation-name: img-spin;
+            animation-duration: 9s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        body table {
+            position: relative;
+            left: 50%;
+            top: 50px;
+            transform: translateX(-50%);
+        }
+
+        body table tr td {
+            background-color: rgb(225, 225, 225);
+            font-weight: bold;
+            font-size: 28px;
+            text-align: center;
+            width: 250px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 5px;
+        }
+
+        body table tr td:hover {
+            background-color: rgb(50, 50, 50);
+            color: white;
+        }
+
+        @keyframes img-spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <script>
+        const descriptionDOM = document.getElementById("description");
+        const animationDOM = document.getElementById("animation");
+
+        const td1DOM = document.getElementById("td1");
+        const td2DOM = document.getElementById("td2");
+        const td3DOM = document.getElementById("td3");
+        const td4DOM = document.getElementById("td4");
+        const td5DOM = document.getElementById("td5");
+        const td6DOM = document.getElementById("td6");
+        const td7DOM = document.getElementById("td7");
+        const td8DOM = document.getElementById("td8");
+        const td9DOM = document.getElementById("td9");
+
+        function updateYinYangFish(duration, text) {
+            descriptionDOM.innerText = text;
+            animationDOM.style.animationDuration = `${duration}s`;
+        }
+
+        window.onload = function () {
+            td1DOM.onclick = function () {
+                updateYinYangFish(0.5000, td1DOM.innerText);
+            }
+            td2DOM.onclick = function () {
+                updateYinYangFish(0.1330, td2DOM.innerText);
+            }
+            td3DOM.onclick = function () {
+                updateYinYangFish(0.1000, td3DOM.innerText);
+            }
+            td4DOM.onclick = function () {
+                updateYinYangFish(0.0670, td4DOM.innerText);
+            }
+            td5DOM.onclick = function () {
+                updateYinYangFish(0.0510, td5DOM.innerText);
+            }
+            td6DOM.onclick = function () {
+                updateYinYangFish(0.0500, td6DOM.innerText);
+            }
+            td7DOM.onclick = function () {
+                updateYinYangFish(0.0417, td7DOM.innerText);
+            }
+            td8DOM.onclick = function () {
+                updateYinYangFish(0.0346, td8DOM.innerText);
+            }
+            td9DOM.onclick = function () {
+                updateYinYangFish(0.0333, td9DOM.innerText);
+            }
+        }
+    </script>
+</body>
+
+</html>
